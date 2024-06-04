@@ -7,7 +7,7 @@ local files = {
 
 function download(url, path)
     local response = http.get(url)
-    local content = response.getAll()
+    local content = response.readAll()
     local file = fs.open(path, "w+")
     file.write(content)
     file.close()
